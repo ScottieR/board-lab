@@ -1,5 +1,12 @@
 # Custom pieces & 3D-printed shells
 
+> **Updated after research (Nov 2026):** see `docs/research/PIECES_AND_CONTROLS.md` for the full report —
+> existing games' pieces (the dial spy game is **Spycraft**), SDK limits, eight reusable piece mechanisms, a
+> game-by-game custom piece catalog and a day-one hardware test plan. Short version: we can't make new
+> recognized pieces (only Board can, via a publishing deal or the announced Board Studio), but **Board Bases**
+> (generic bases for 25mm minis, with a public model) plus printed sockets, collars, cranks and windows give us
+> nearly everything we want.
+
 ## How Board sees a piece
 - Pieces are passive: no batteries or electronics. Each has a **conductive pattern on its base (the Glyph)**; an on-device ML model (`model.tflite`) recognizes it and reports `glyphId`, position, rotation, and whether a hand is touching it.
 - The model is trained per **official Piece Set** (e.g. Mushka, Chop Chop, Board Arcade). Only one set's model is active per game.

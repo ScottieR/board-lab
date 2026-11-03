@@ -57,6 +57,7 @@ docs/GAME_IDEAS.md   38 ideas ranked by fun × Board fit × doability (from docs
 docs/DESIGN_CODEX.md taste + fun rules every game is reviewed against
 docs/research/FUN_RESEARCH.md   what makes games fun — sources and findings
 docs/PIECES_AND_PRINTING.md     custom pieces & 3D-printed shells
+docs/research/PIECES_AND_CONTROLS.md   research: existing pieces, SDK limits, custom piece catalog, test plan
 ```
 
 Add a game: write a recipe in `src/recipes/` (or a hand-written `Game` in `src/games/`) and register it in `GAMES` in `src/main.ts`. Check it with `python3 scripts/playtest.py`.
