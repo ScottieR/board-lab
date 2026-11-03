@@ -1,60 +1,101 @@
-# Game ideas for Board Lab
+# Game ideas, ranked
 
-What makes Board different from an iPad flat on a table — design for these, not around them:
+Every idea from Scottie (★), Gemini (G) and the first Board Lab list (B), merged where they're the same game and
+ranked by **score = fun 45% + Board fit 35% + doability 20%** (each 1–5).
 
-| Board superpower | What the SDK gives us | Design use |
-|---|---|---|
-| **Physical pieces with identity** | `glyphId` per piece | Each kid *owns* a piece/character; pieces can be tools (lantern, magnet, shovel) |
-| **Rotation** | `orientation` (≈1° precision) | Aim, steer, dial, compass, valve, beam |
-| **Hand on / hand off** | `isTouched` | "Holding = moving/visible, letting go = hiding/locked in"; turn-commit without a button |
-| **Placing & lifting** | began / ended phases | Drop to plant/build/dig; lift to "jump" or to remove from the world |
-| **A 24" table everyone surrounds** | 1920×1080, any number of contacts | Home zones on each side, text that faces each player, reaching across = co-op moments |
-| **Fingers too** | `glyphId === 0` | Littlest player can always join with a finger (TK-friendly) |
+- **Fun** — how strong the core loop is for our family (mixed ages, playing together), using the research in
+  `docs/research/FUN_RESEARCH.md`.
+- **Board fit** — how much it needs Board's superpowers (pieces you place/turn/hold, everyone around one table)
+  rather than being a tablet game on a big screen.
+- **Doability** — how much new engine work, content and art it needs. Phones-as-hands and runtime AI lower it.
 
-One Piece Set is active per game (one `.tflite` model per bundle), so every game below works with any single official set: we map *glyph ids → roles* in our own table.
+Status: ✅ playable in the simulator now · 🔜 build next (verbs designed, small engine work) · 📋 starter template
+(archetype + skeleton exist; the Studio can start a kid's game from it).
 
----
+| # | Game | Score | Fun | Fit | Do | Status | Archetype | Merges |
+|---|------|------:|---:|---:|---:|--------|-----------|--------|
+| 1 | **Fizzwick's Lab** | 100 | 5 | 5 | 5 | ✅ playable | `combine-and-discover` | ★ Mad Scientist; G Rainbow Mixer Bakery; G Rune-Forged Mage Duels |
+| 2 | **Night Lights** | 100 | 5 | 5 | 5 | ✅ playable | `reveal-in-the-dark` | B Night Lights; G Firefly Meadow; G Deep Sea Bathysphere |
+| 3 | **Peek Park** | 100 | 5 | 5 | 5 | ✅ playable | `search-and-find` | ★ Where's Waldo / Mamoko |
+| 4 | **Campground Caper** | 96 | 5 | 5 | 4 | 🔜 build next | `sneak-and-guard` | B Sneaky Sasquatch–style; G Spy Drop Dead-Drop; G Dungeon Trap Architects |
+| 5 | **Prism Heist** | 96 | 5 | 5 | 4 | 🔜 build next | `aim-and-bounce` | G Prism Heist: Laser Vault; B Bounce Lab; G Meteor Defense; G Railway Signal Switch; G Galactic Orbit Slingshot |
+| 6 | **Spirit Board** | 96 | 5 | 5 | 4 | 🔜 build next | `group-touch` | ★ Ouija |
+| 7 | **Pretend Island** | 92 | 5 | 5 | 3 | 📋 starter template | `pretend-world` | ★ Toca Boca paper-doll worlds; B Island Friends; Hello Kitty Island Adventure |
+| 8 | **Dino Dig** | 91 | 4 | 5 | 5 | 📋 starter template | `reveal-in-the-dark` | G Dino Dig Site; G Animal Track Detectives |
+| 9 | **Kitchen Rush (and Slow Kitchen)** | 89 | 5 | 4 | 4 | 🔜 build next | `orders-rush` | ★ Cooking games (rushed or slow); G Kitchen Panic; G Feed the Monster Buffet |
+| 10 | **Story Together** | 89 | 5 | 4 | 4 | 🔜 build next | `story-together` | ★ Choose-your-own-adventure with combined choices; G Mythic Storybook Tale-Spinner |
+| 11 | **Pet Parade** | 87 | 4 | 5 | 4 | 📋 starter template | `music-toy` | B Pet Parade; G Musical Melody Conductor |
+| 12 | **Teddy Clinic** | 87 | 4 | 5 | 4 | 📋 starter template | `care-and-heal` | ★ Kid's doctor app; G Anatomy ER |
+| 13 | **Treasure Tides** | 87 | 4 | 5 | 4 | 📋 starter template | `search-and-find` | B Treasure Tides |
+| 14 | **Bomb Squad** | 85 | 5 | 4 | 3 | 📋 starter template | `secret-hands` | G Bomb Squad Wire Cutters |
+| 15 | **Wagon Trail** | 85 | 5 | 4 | 3 | 📋 starter template | `journey-survival` | ★ Oregon Trail; G Merchant Galleons of the Spice Coast |
+| 16 | **Bloom** | 83 | 4 | 5 | 3 | 📋 starter template | `cozy-terraform` | ★ Terraform (the Nature app); G Terraforming Biosphere Dome; G Space Garden Blooms; B Sun & Sprout; G Water Cycle Eco-Sim |
+| 17 | **Island Builders (Catan-style)** | 81 | 5 | 4 | 2 | 📋 starter template | `hex-strategy` | ★ Catan-style |
+| 18 | **Gone Fishin'** | 80 | 4 | 4 | 4 | 📋 starter template | `reflex-party` | G Trophy Fish Strike |
+| 19 | **Sleepy Farm Roundup** | 80 | 4 | 4 | 4 | 📋 starter template | `sneak-and-guard` | G Sleepy Farm Roundup; G Penguin Ice Floe Wobble |
+| 20 | **Liar's Dice & Poker Night** | 78 | 5 | 3 | 3 | 📋 starter template | `secret-hands` | B Phones + Board idea; G King's Poison Taster |
+| 21 | **Chameleon Swat** | 77 | 4 | 3 | 5 | 📋 starter template | `reflex-party` | G Chameleon Swat; G Bubble Pop Bath Brigade; B Sumo Bots; G Micro-Curling |
+| 22 | **Castle Siege** | 76 | 4 | 4 | 3 | 📋 starter template | `aim-and-bounce` | G Castle Siege: Trebuchet Arc; G Medieval Siege Engineer |
+| 23 | **Main Street Together** | 76 | 4 | 4 | 3 | 📋 starter template | `build-and-upgrade` | ★ Farm/mall/business/hotel/restaurant upgrading, co-op; G Architect's Blueprint: City Zoning; G Feudal City Guilds |
+| 24 | **Rummi Tiles** | 76 | 4 | 4 | 3 | 📋 starter template | `tiles-and-melds` | ★ Rummikub |
+| 25 | **Slime Outbreak** | 76 | 4 | 4 | 3 | 📋 starter template | `aim-and-bounce` | G Bioweapon Outbreak Quarantine (kid-friendly reskin); G Volcano Escape |
+| 26 | **Wizard Duel** | 76 | 4 | 4 | 3 | 📋 starter template | `combine-and-discover` | G Rune-Forged Mage Duels |
+| 27 | **Constellation Maker** | 71 | 3 | 4 | 4 | 📋 starter template | `story-together` | G Constellation Mapmaker |
+| 28 | **Tadpole Crossing** | 71 | 3 | 4 | 4 | 📋 starter template | `cozy-terraform` | G Tadpole Pond Crossing |
+| 29 | **Mexican Train** | 69 | 4 | 3 | 3 | 📋 starter template | `tiles-and-melds` | ★ Mexican Train dominoes |
+| 30 | **Submarine Sonar** | 69 | 4 | 3 | 3 | 📋 starter template | `secret-hands` | G Submarine Sonar Ping |
+| 31 | **Circuit City** | 67 | 3 | 4 | 3 | 📋 starter template | `aim-and-bounce` | G Circuit Weaver; G Clockwork Gears of Time; G Canal Lock Master |
+| 32 | **Crypt Crawl** | 65 | 4 | 3 | 2 | 📋 starter template | `hex-strategy` | G Necromancer Crypt Crawl; G Fog of War: Trench Line |
+| 33 | **Dream Mahjong** | 65 | 4 | 3 | 2 | 📋 starter template | `tiles-and-melds` | ★ Mahjong with customizable tiles |
+| 34 | **Word Garden** | 60 | 3 | 3 | 3 | 📋 starter template | `combine-and-discover` | G Language Rune Scribe |
+| 35 | **Space Mining Co.** | 56 | 3 | 3 | 2 | 📋 starter template | `hex-strategy` | G Asteroid Belt Mining Consortium; G Cyberpunk Netrunner; G Olympian Favor; G Plate Tectonics; G Ant Colony Tunnels; G Conspiracy Corkboard |
 
-## 1. Night Lights ✅ prototype built
-Co-op flashlight hide-and-seek. Each piece is a lantern; **rotating it sweeps a beam** across a dark garden. Hold light on a hidden critter to find it. Shy owls need **two beams crossing** on them, so siblings have to coordinate from opposite sides. Fingers make a small glow.
-- Ages: all three (TK with a finger) · Build: done, ~300 lines
-- Next: critters that scurry when lit by only one beam; sound; a "night map" that persists across rounds via `Board.save`
+## What makes each one a Board game
 
-## 2. Campground Caper — *Sneaky Sasquatch–style stealth heist*
-You're a sneaky forest creature raiding a campground for snacks. Ranger AI walks patrols with **visible vision cones** on screen. The twist uses `isTouched`:
-- **Hand on your piece = you're moving and can be seen.** Let go and you freeze into a bush-disguise.
-- Slide your critter between cover; grab the cooler; get back to your den at your side of the table.
-- Co-op roles: one sibling's piece is the sneaker, another *taps* (finger) to make a distracting noise that turns the ranger's head.
-- Ages: 1st–4th grade lead, TK as the distraction-maker · Build: medium (pathing + cone checks, reuses Night Lights' beam math)
+1. **Fizzwick's Lab** — Pour one beaker into another by twisting; 25 discoveries, chains, Professor requests.
+2. **Night Lights** — Turn lanterns to sweep beams; shy owls need two beams crossing. _Firefly (carry fireflies to a jar) and Deep Sea (creatures flee bright light) are skins + one verb each._
+3. **Peek Park** — Table shows only colour dabs; your magnifier reveals people turned to face you.
+4. **Campground Caper** — Hand on your piece = moving and visible; let go to freeze in disguise.
+5. **Prism Heist** — Turn mirror pieces to bend a laser around guards to the vault — rotation as a precise aiming dial. _Physical mirrors aren't needed (the screen can't see them); the printed turret just shows the mirror face._
+6. **Spirit Board** — The pointer only glides when every player's finger is on or around it; a kind, funny AI spirit answers. *Needs: Claude at runtime (or a big pre-written answer bank offline).*
+7. **Pretend Island** — Your printed doll lives on the table; rooms and friends react; the island is saved between nights. *Needs: Image generation for rich rooms.*
+8. **Dino Dig** — Sweep a brush piece back and forth to scrape away dirt and uncover a fossil (scratch-off reveal). _A 'scrub' variant of reveal — great TK game._
+9. **Kitchen Rush (and Slow Kitchen)** — Everyone reaching across one kitchen; pans and pots are pieces; slow mode has no timers.
+10. **Story Together** — Each kid secretly places their character on a choice; the blend steers the story; saved as a picture book. *Needs: Claude + image generation at runtime.*
+11. **Pet Parade** — A physical step-sequencer: position is time, rotation is pitch; record your own voices as instruments.
+12. **Teddy Clinic** — Printed stethoscope, thermometer and bandage pieces used on patients on the table; every patient gets better.
+13. **Treasure Tides** — A spyglass piece shows clues only in the direction it faces; a shovel piece digs.
+14. **Bomb Squad** — The bomb is on the table; only one phone has the manual — shout instructions across the table. *Needs: Phones.*
+15. **Wagon Trail** — A trail map across the table; push the wagon piece; turn it to set pace; vote on river crossings. *Needs: Claude for fresh events (optional).*
+16. **Bloom** — Place, turn and hold tool pieces (sun, cloud, seed pot, mountain) and watch a barren world bloom; time-lapse at the end.
+17. **Island Builders (Catan-style)** — A new beautiful island every game; trading stays face-to-face; a printed raccoon robber. *Needs: Phones for hands.*
+18. **Gone Fishin'** — Spin your reel piece round and round to reel in a fish (rotation as a crank). _A printed thumb-crank can't be sensed — spinning the whole piece can._
+19. **Sleepy Farm Roundup** — Slide barn pieces over wandering sheep before the (silly) wolves arrive at sunset.
+20. **Liar's Dice & Poker Night** — Secrets on phones; slide your chip piece in to bet, turn it to set the bid; dramatic reveal on the table. *Needs: Phones, Room server.*
+21. **Chameleon Swat** — 60-second chaos rounds with pieces as swatters and bumpers; the littlest gets bigger targets. _Don't flick physical pieces across the glass (scratches, lost tracking) — pieces push virtual pucks._
+22. **Castle Siege** — Turn your trebuchet to aim; walls cast protective shadows.
+23. **Main Street Together** — Each kid runs a shop on a shared street; hold a piece on your shop to upgrade; shops supply each other.
+24. **Rummi Tiles** — The big shared table makes rearranging melds easy and rule-checked; racks stay private on phones. *Needs: Phones/iPads as racks.*
+25. **Slime Outbreak** — Green goo spreads across a town; place wall pieces to contain it together.
+26. **Wizard Duel** — Combine rune pieces into spells that collide mid-table (Fizz Lab's mix verb, versus).
+27. **Constellation Maker** — Connect stars with pieces to draw constellations and reveal their animated myths.
+28. **Tadpole Crossing** — Drop lily pads to calm the current so frogs can cross.
+29. **Mexican Train** — Gorgeous trains snake out from the station; your train engine piece marks your line; hands on phones. *Needs: Phones/iPads as hands.*
+30. **Submarine Sonar** — Your sub's true position is secret on your phone; the table shows only sonar pings. *Needs: Phones.* _Hidden movement conflicts with physical pieces on the table, so positions live on phones._
+31. **Circuit City** — Place gate pieces to route power/water/gears to light up the city. _Physical gears can't mesh-detect; turning one gear piece drives digital gears._
+32. **Crypt Crawl** — Grid tactics with printed minis; the table tracks health, spells and line of sight.
+33. **Dream Mahjong** — Tile art the family designs (AI-generated suits: our pets, our town); the table checks hands. *Needs: Phones, Image generation for tile sets.* _Rules complexity makes this a parents-first game; a simplified kids' variant helps._
+34. **Word Garden** — Put prefix and root pieces side by side to grow words (adjacency, not stacking).
+35. **Space Mining Co.** — Lower priority: heavier strategy or older-teen themes that fit the family less well.
 
-## 3. Island Friends — *Hello Kitty Island Adventure–style cozy island*
-A persistent island lives on the table. Each kid's piece is their character and has a **home corner** facing their seat. Walk your piece to places to gather (shells, fruit, flowers), bring gifts to island friends to raise friendship, unlock new areas.
-- Board twist: **put two kids' pieces next to each other to "craft together"** (adjacency recipes), and gifts only work when the friend's house is reached physically.
-- `Board.save` keeps the island growing across days — a once-a-night ritual.
-- Ages: all · Build: biggest (content-heavy); start with one meadow + 3 friends + 5 items
+## Notes on Gemini's hardware suggestions
 
-## 4. Bounce Lab — marble-run puzzle
-Each piece is a bumper/ramp; **its rotation sets the deflection angle**. Tap to launch a marble from a start pad; route it through stars to a goal. Rearrange and re-aim between shots, like a physical Incredible Machine.
-- Ages: 4th grader solo puzzles; little ones love just launching · Build: small (2D reflection physics)
+- **Keep:** translucent PETG shells as light pipes — the screen glows up through lanterns, gems and eyes with no
+  electronics. Great for Night Lights, Firefly Meadow and the potion beakers.
+- **Doesn't apply to Board:** recognising a printed *shape* or footprint (only official glyph bases are
+  identified), conductive nibs as IDs (they'd read as anonymous touches at best), physical mirrors/gears/cranks
+  (the screen can't see them — use piece rotation instead), and hidden dials inside goblets (use phones for secrets).
+- **Careful:** felt pads under a piece will block its glyph. Put felt only on the outer rim of a shell, never
+  over the base. Don't flick pieces across the glass — move virtual things with them.
 
-## 5. Treasure Tides — compass treasure hunt
-One piece is a **spyglass**: rotate it and a far-off clue appears only in the direction it faces. A second piece is the **shovel**: place it to dig. Clues are relative ("3 steps from the palm, toward the whale"), so the table argues about where to aim.
-- Ages: 1st–4th · Build: small-medium
-
-## 6. Sun & Sprout — rotate the sun
-A garden grows over real time. Place the **sun piece and rotate it** to move shadows; place the **watering can** and lift it to pour. Plants need the right mix. Light/shadow math reuses Night Lights.
-- Ages: TK–1st · Build: small; great first "make your own" for the 4th grader
-
-## 7. Pet Parade — rhythm & dial music
-Pieces are instruments; **rotation is a dial** (pitch/tempo) and hand-on means "playing." Each kid's side of the table is their lane. Loop builder rather than a scoring game — perfect "noodle around" toy.
-- Ages: all · Build: small with WebAudio
-
-## 8. Sumo Bots — quick reflex party game
-Two to four pieces are bumper bots in a ring; **aim with rotation, release your hand to dash**. Last bot standing. Short rounds for when attention spans are short.
-- Ages: all · Build: small
-
-### Suggested order
-1. **Night Lights** (done) — proves pieces, rotation, multi-player co-op
-2. **Bounce Lab** or **Sun & Sprout** — tiny, satisfying, good to build *with* the 4th grader
-3. **Campground Caper** — the "wow, we made this" stealth game
-4. **Island Friends** — the long-running cozy world, once the toolkit is mature
+_Regenerate this file with `python3 scripts/rank-ideas.py` after editing `docs/ideas.json`._

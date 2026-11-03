@@ -6,3 +6,4 @@ dist/
 public/model.tflite
 *.tflite
 .DS_Store
+playtest/

@@ -1,17 +1,31 @@
 import { Board } from "@board.fun/web-sdk";
 import { startInput } from "./board/input";
 import { createSpace } from "./board/space";
-import { createNightLights } from "./games/night-lights";
+import { createRecipeGame } from "./engine/runtime";
+import fizzLab from "./recipes/fizz-lab";
+import nightLights from "./recipes/night-lights";
+import peekPark from "./recipes/peek-park";
 import { createSandbox } from "./games/sandbox";
 import type { Game } from "./games/types";
 
 // Board Lab — a host for quick game prototypes.
-// Pick a prototype with the URL hash in the browser (#sandbox, #night-lights)
+// Pick a prototype with the URL hash in the browser (#night-lights, #peek-park,
+// #fizz-lab, #sandbox)
 // or with the pause menu's custom buttons on the device.
 
+// Recipe games are built from the verb library (src/engine); the sandbox is a
+// hand-written contact debugger.
 const GAMES: Record<string, () => Game> = {
-  "night-lights": createNightLights,
+  "night-lights": () => createRecipeGame(nightLights),
+  "peek-park": () => createRecipeGame(peekPark),
+  "fizz-lab": () => createRecipeGame(fizzLab),
   sandbox: createSandbox,
+};
+const NAMES: Record<string, string> = {
+  "night-lights": nightLights.title,
+  "peek-park": peekPark.title,
+  "fizz-lab": fizzLab.title,
+  sandbox: "Sandbox",
 };
 const DEFAULT_GAME = "night-lights";
 
@@ -51,11 +65,7 @@ if (Board.isOnDevice) {
   Board.pause.setContext({
     gameName: "Board Lab",
     offerSaveOption: false,
-    customButtons: Object.keys(GAMES).map((id) => ({
-      id,
-      title: GAMES[id]().name,
-      icon: "",
-    })),
+    customButtons: Object.keys(GAMES).map((id) => ({ id, title: NAMES[id] ?? id, icon: "" })),
   });
   Board.pause.onResult((result) => {
     if (result.action === "custom_button" && result.customButtonId) {
