@@ -1,37 +1,572 @@
 [
-  {"name": "Peek Park", "src": ["★ Where's Waldo / Mamoko"], "arch": "search-and-find", "hook": "Table shows only colour dabs; your magnifier reveals people turned to face you.", "fun": 5, "fit": 5, "do": 5, "status": "playable", "needs": []},
-  {"name": "Fizzwick's Lab", "src": ["★ Mad Scientist", "G Rainbow Mixer Bakery", "G Rune-Forged Mage Duels"], "arch": "combine-and-discover", "hook": "Pour one beaker into another by twisting; 25 discoveries, chains, Professor requests.", "fun": 5, "fit": 5, "do": 5, "status": "playable", "needs": []},
-  {"name": "Night Lights", "src": ["B Night Lights", "G Firefly Meadow", "G Deep Sea Bathysphere"], "arch": "reveal-in-the-dark", "hook": "Turn lanterns to sweep beams; shy owls need two beams crossing.", "fun": 5, "fit": 5, "do": 5, "status": "playable", "needs": [], "note": "Firefly (carry fireflies to a jar) and Deep Sea (creatures flee bright light) are skins + one verb each."},
-  {"name": "Spirit Board", "src": ["★ Ouija"], "arch": "group-touch", "hook": "The pointer only glides when every player's finger is on or around it; a kind, funny AI spirit answers.", "fun": 5, "fit": 5, "do": 4, "status": "next", "needs": ["Claude at runtime (or a big pre-written answer bank offline)"]},
-  {"name": "Kitchen Rush (and Slow Kitchen)", "src": ["★ Cooking games (rushed or slow)", "G Kitchen Panic", "G Feed the Monster Buffet"], "arch": "orders-rush", "hook": "Everyone reaching across one kitchen; pans and pots are pieces; slow mode has no timers.", "fun": 5, "fit": 4, "do": 4, "status": "next", "needs": []},
-  {"name": "Prism Heist", "src": ["G Prism Heist: Laser Vault", "B Bounce Lab", "G Meteor Defense", "G Railway Signal Switch", "G Galactic Orbit Slingshot"], "arch": "aim-and-bounce", "hook": "Turn mirror pieces to bend a laser around guards to the vault — rotation as a precise aiming dial.", "fun": 5, "fit": 5, "do": 4, "status": "next", "needs": [], "note": "Physical mirrors aren't needed (the screen can't see them); the printed turret just shows the mirror face."},
-  {"name": "Story Together", "src": ["★ Choose-your-own-adventure with combined choices", "G Mythic Storybook Tale-Spinner"], "arch": "story-together", "hook": "Each kid secretly places their character on a choice; the blend steers the story; saved as a picture book.", "fun": 5, "fit": 4, "do": 4, "status": "next", "needs": ["Claude + image generation at runtime"]},
-  {"name": "Campground Caper", "src": ["B Sneaky Sasquatch–style", "G Spy Drop Dead-Drop", "G Dungeon Trap Architects"], "arch": "sneak-and-guard", "hook": "Hand on your piece = moving and visible; let go to freeze in disguise.", "fun": 5, "fit": 5, "do": 4, "status": "next", "needs": []},
-  {"name": "Teddy Clinic", "src": ["★ Kid's doctor app", "G Anatomy ER"], "arch": "care-and-heal", "hook": "Printed stethoscope, thermometer and bandage pieces used on patients on the table; every patient gets better.", "fun": 4, "fit": 5, "do": 4, "status": "template", "needs": []},
-  {"name": "Dino Dig", "src": ["G Dino Dig Site", "G Animal Track Detectives"], "arch": "reveal-in-the-dark", "hook": "Sweep a brush piece back and forth to scrape away dirt and uncover a fossil (scratch-off reveal).", "fun": 4, "fit": 5, "do": 5, "status": "template", "needs": [], "note": "A 'scrub' variant of reveal — great TK game."},
-  {"name": "Pretend Island", "src": ["★ Toca Boca paper-doll worlds", "B Island Friends", "Hello Kitty Island Adventure"], "arch": "pretend-world", "hook": "Your printed doll lives on the table; rooms and friends react; the island is saved between nights.", "fun": 5, "fit": 5, "do": 3, "status": "template", "needs": ["Image generation for rich rooms"]},
-  {"name": "Wagon Trail", "src": ["★ Oregon Trail", "G Merchant Galleons of the Spice Coast"], "arch": "journey-survival", "hook": "A trail map across the table; push the wagon piece; turn it to set pace; vote on river crossings.", "fun": 5, "fit": 4, "do": 3, "status": "template", "needs": ["Claude for fresh events (optional)"]},
-  {"name": "Bloom", "src": ["★ Terraform (the Nature app)", "G Terraforming Biosphere Dome", "G Space Garden Blooms", "B Sun & Sprout", "G Water Cycle Eco-Sim"], "arch": "cozy-terraform", "hook": "Place, turn and hold tool pieces (sun, cloud, seed pot, mountain) and watch a barren world bloom; time-lapse at the end.", "fun": 4, "fit": 5, "do": 3, "status": "template", "needs": []},
-  {"name": "Main Street Together", "src": ["★ Farm/mall/business/hotel/restaurant upgrading, co-op", "G Architect's Blueprint: City Zoning", "G Feudal City Guilds"], "arch": "build-and-upgrade", "hook": "Each kid runs a shop on a shared street; hold a piece on your shop to upgrade; shops supply each other.", "fun": 4, "fit": 4, "do": 3, "status": "template", "needs": []},
-  {"name": "Rummi Tiles", "src": ["★ Rummikub"], "arch": "tiles-and-melds", "hook": "The big shared table makes rearranging melds easy and rule-checked; racks stay private on phones.", "fun": 4, "fit": 4, "do": 3, "status": "template", "needs": ["Phones/iPads as racks"]},
-  {"name": "Mexican Train", "src": ["★ Mexican Train dominoes"], "arch": "tiles-and-melds", "hook": "Gorgeous trains snake out from the station; your train engine piece marks your line; hands on phones.", "fun": 4, "fit": 3, "do": 3, "status": "template", "needs": ["Phones/iPads as hands"]},
-  {"name": "Liar's Dice & Poker Night", "src": ["B Phones + Board idea", "G King's Poison Taster"], "arch": "secret-hands", "hook": "Secrets on phones; slide your chip piece in to bet, turn it to set the bid; dramatic reveal on the table.", "fun": 5, "fit": 3, "do": 3, "status": "template", "needs": ["Phones", "Room server"]},
-  {"name": "Bomb Squad", "src": ["G Bomb Squad Wire Cutters"], "arch": "secret-hands", "hook": "The bomb is on the table; only one phone has the manual — shout instructions across the table.", "fun": 5, "fit": 4, "do": 3, "status": "template", "needs": ["Phones"]},
-  {"name": "Island Builders (Catan-style)", "src": ["★ Catan-style"], "arch": "hex-strategy", "hook": "A new beautiful island every game; trading stays face-to-face; a printed raccoon robber.", "fun": 5, "fit": 4, "do": 2, "status": "template", "needs": ["Phones for hands"]},
-  {"name": "Dream Mahjong", "src": ["★ Mahjong with customizable tiles"], "arch": "tiles-and-melds", "hook": "Tile art the family designs (AI-generated suits: our pets, our town); the table checks hands.", "fun": 4, "fit": 3, "do": 2, "status": "template", "needs": ["Phones", "Image generation for tile sets"], "note": "Rules complexity makes this a parents-first game; a simplified kids' variant helps."},
-  {"name": "Pet Parade", "src": ["B Pet Parade", "G Musical Melody Conductor"], "arch": "music-toy", "hook": "A physical step-sequencer: position is time, rotation is pitch; record your own voices as instruments.", "fun": 4, "fit": 5, "do": 4, "status": "template", "needs": []},
-  {"name": "Sleepy Farm Roundup", "src": ["G Sleepy Farm Roundup", "G Penguin Ice Floe Wobble"], "arch": "sneak-and-guard", "hook": "Slide barn pieces over wandering sheep before the (silly) wolves arrive at sunset.", "fun": 4, "fit": 4, "do": 4, "status": "template", "needs": []},
-  {"name": "Chameleon Swat", "src": ["G Chameleon Swat", "G Bubble Pop Bath Brigade", "B Sumo Bots", "G Micro-Curling"], "arch": "reflex-party", "hook": "60-second chaos rounds with pieces as swatters and bumpers; the littlest gets bigger targets.", "fun": 4, "fit": 3, "do": 5, "status": "template", "needs": [], "note": "Don't flick physical pieces across the glass (scratches, lost tracking) — pieces push virtual pucks."},
-  {"name": "Treasure Tides", "src": ["B Treasure Tides"], "arch": "search-and-find", "hook": "A spyglass piece shows clues only in the direction it faces; a shovel piece digs.", "fun": 4, "fit": 5, "do": 4, "status": "template", "needs": []},
-  {"name": "Gone Fishin'", "src": ["G Trophy Fish Strike"], "arch": "reflex-party", "hook": "Spin your reel piece round and round to reel in a fish (rotation as a crank).", "fun": 4, "fit": 4, "do": 4, "status": "template", "needs": [], "note": "A printed thumb-crank can't be sensed — spinning the whole piece can."},
-  {"name": "Slime Outbreak", "src": ["G Bioweapon Outbreak Quarantine (kid-friendly reskin)", "G Volcano Escape"], "arch": "aim-and-bounce", "hook": "Green goo spreads across a town; place wall pieces to contain it together.", "fun": 4, "fit": 4, "do": 3, "status": "template", "needs": []},
-  {"name": "Castle Siege", "src": ["G Castle Siege: Trebuchet Arc", "G Medieval Siege Engineer"], "arch": "aim-and-bounce", "hook": "Turn your trebuchet to aim; walls cast protective shadows.", "fun": 4, "fit": 4, "do": 3, "status": "template", "needs": []},
-  {"name": "Tadpole Crossing", "src": ["G Tadpole Pond Crossing"], "arch": "cozy-terraform", "hook": "Drop lily pads to calm the current so frogs can cross.", "fun": 3, "fit": 4, "do": 4, "status": "template", "needs": []},
-  {"name": "Constellation Maker", "src": ["G Constellation Mapmaker"], "arch": "story-together", "hook": "Connect stars with pieces to draw constellations and reveal their animated myths.", "fun": 3, "fit": 4, "do": 4, "status": "template", "needs": []},
-  {"name": "Circuit City", "src": ["G Circuit Weaver", "G Clockwork Gears of Time", "G Canal Lock Master"], "arch": "aim-and-bounce", "hook": "Place gate pieces to route power/water/gears to light up the city.", "fun": 3, "fit": 4, "do": 3, "status": "template", "needs": [], "note": "Physical gears can't mesh-detect; turning one gear piece drives digital gears."},
-  {"name": "Wizard Duel", "src": ["G Rune-Forged Mage Duels"], "arch": "combine-and-discover", "hook": "Combine rune pieces into spells that collide mid-table (Fizz Lab's mix verb, versus).", "fun": 4, "fit": 4, "do": 3, "status": "template", "needs": []},
-  {"name": "Submarine Sonar", "src": ["G Submarine Sonar Ping"], "arch": "secret-hands", "hook": "Your sub's true position is secret on your phone; the table shows only sonar pings.", "fun": 4, "fit": 3, "do": 3, "status": "template", "needs": ["Phones"], "note": "Hidden movement conflicts with physical pieces on the table, so positions live on phones."},
-  {"name": "Crypt Crawl", "src": ["G Necromancer Crypt Crawl", "G Fog of War: Trench Line"], "arch": "hex-strategy", "hook": "Grid tactics with printed minis; the table tracks health, spells and line of sight.", "fun": 4, "fit": 3, "do": 2, "status": "template", "needs": []},
-  {"name": "Word Garden", "src": ["G Language Rune Scribe"], "arch": "combine-and-discover", "hook": "Put prefix and root pieces side by side to grow words (adjacency, not stacking).", "fun": 3, "fit": 3, "do": 3, "status": "template", "needs": []},
-  {"name": "Space Mining Co.", "src": ["G Asteroid Belt Mining Consortium", "G Cyberpunk Netrunner", "G Olympian Favor", "G Plate Tectonics", "G Ant Colony Tunnels", "G Conspiracy Corkboard"], "arch": "hex-strategy", "hook": "Lower priority: heavier strategy or older-teen themes that fit the family less well.", "fun": 3, "fit": 3, "do": 2, "status": "template", "needs": []}
+ {
+  "name": "Peek Park",
+  "src": [
+   "★ Where's Waldo / Mamoko"
+  ],
+  "arch": "search-and-find",
+  "hook": "Table shows only colour dabs; your magnifier reveals people turned to face you.",
+  "fun": 5,
+  "fit": 5,
+  "do": 5,
+  "status": "playable",
+  "needs": []
+ },
+ {
+  "name": "Fizzwick's Lab",
+  "src": [
+   "★ Mad Scientist",
+   "G Rainbow Mixer Bakery",
+   "G Rune-Forged Mage Duels"
+  ],
+  "arch": "combine-and-discover",
+  "hook": "Pour one beaker into another by twisting; 25 discoveries, chains, Professor requests.",
+  "fun": 5,
+  "fit": 5,
+  "do": 5,
+  "status": "playable",
+  "needs": []
+ },
+ {
+  "name": "Night Lights",
+  "src": [
+   "B Night Lights",
+   "G Firefly Meadow",
+   "G Deep Sea Bathysphere"
+  ],
+  "arch": "reveal-in-the-dark",
+  "hook": "Turn lanterns to sweep beams; shy owls need two beams crossing.",
+  "fun": 5,
+  "fit": 5,
+  "do": 5,
+  "status": "playable",
+  "needs": [],
+  "note": "Firefly (carry fireflies to a jar) and Deep Sea (creatures flee bright light) are skins + one verb each."
+ },
+ {
+  "name": "Spirit Board",
+  "src": [
+   "★ Ouija"
+  ],
+  "arch": "group-touch",
+  "hook": "The pointer only glides when every player's finger is on or around it; a kind, funny AI spirit answers.",
+  "fun": 5,
+  "fit": 5,
+  "do": 4,
+  "status": "next",
+  "needs": [
+   "Claude at runtime (or a big pre-written answer bank offline)"
+  ]
+ },
+ {
+  "name": "Kitchen Rush (and Slow Kitchen)",
+  "src": [
+   "★ Cooking games (rushed or slow)",
+   "G Kitchen Panic",
+   "G Feed the Monster Buffet"
+  ],
+  "arch": "orders-rush",
+  "hook": "Everyone reaching across one kitchen; pans and pots are pieces; slow mode has no timers.",
+  "fun": 5,
+  "fit": 4,
+  "do": 4,
+  "status": "next",
+  "needs": []
+ },
+ {
+  "name": "Prism Heist",
+  "src": [
+   "G Prism Heist: Laser Vault",
+   "B Bounce Lab",
+   "G Meteor Defense",
+   "G Railway Signal Switch",
+   "G Galactic Orbit Slingshot"
+  ],
+  "arch": "aim-and-bounce",
+  "hook": "Turn mirror pieces to bend a laser around guards to the vault — rotation as a precise aiming dial.",
+  "fun": 5,
+  "fit": 5,
+  "do": 4,
+  "status": "next",
+  "needs": [],
+  "note": "Physical mirrors aren't needed (the screen can't see them); the printed turret just shows the mirror face."
+ },
+ {
+  "name": "Story Together",
+  "src": [
+   "★ Choose-your-own-adventure with combined choices",
+   "G Mythic Storybook Tale-Spinner"
+  ],
+  "arch": "story-together",
+  "hook": "Each kid secretly places their character on a choice; the blend steers the story; saved as a picture book.",
+  "fun": 5,
+  "fit": 4,
+  "do": 4,
+  "status": "next",
+  "needs": [
+   "Claude + image generation at runtime"
+  ]
+ },
+ {
+  "name": "Campground Caper",
+  "src": [
+   "B Sneaky Sasquatch–style",
+   "G Spy Drop Dead-Drop",
+   "G Dungeon Trap Architects"
+  ],
+  "arch": "sneak-and-guard",
+  "hook": "Hand on your piece = moving and visible; let go to freeze in disguise.",
+  "fun": 5,
+  "fit": 5,
+  "do": 4,
+  "status": "next",
+  "needs": []
+ },
+ {
+  "name": "Teddy Clinic",
+  "src": [
+   "★ Kid's doctor app",
+   "G Anatomy ER"
+  ],
+  "arch": "care-and-heal",
+  "hook": "Printed stethoscope, thermometer and bandage pieces used on patients on the table; every patient gets better.",
+  "fun": 4,
+  "fit": 5,
+  "do": 4,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Dino Dig",
+  "src": [
+   "G Dino Dig Site",
+   "G Animal Track Detectives"
+  ],
+  "arch": "reveal-in-the-dark",
+  "hook": "Sweep a brush piece back and forth to scrape away dirt and uncover a fossil (scratch-off reveal).",
+  "fun": 4,
+  "fit": 5,
+  "do": 5,
+  "status": "template",
+  "needs": [],
+  "note": "A 'scrub' variant of reveal — great TK game."
+ },
+ {
+  "name": "Pretend Island",
+  "src": [
+   "★ Toca Boca paper-doll worlds",
+   "B Island Friends",
+   "Hello Kitty Island Adventure"
+  ],
+  "arch": "pretend-world",
+  "hook": "Your printed doll lives on the table; rooms and friends react; the island is saved between nights.",
+  "fun": 5,
+  "fit": 5,
+  "do": 3,
+  "status": "template",
+  "needs": [
+   "Image generation for rich rooms"
+  ]
+ },
+ {
+  "name": "Wagon Trail",
+  "src": [
+   "★ Oregon Trail",
+   "G Merchant Galleons of the Spice Coast"
+  ],
+  "arch": "journey-survival",
+  "hook": "A trail map across the table; push the wagon piece; turn it to set pace; vote on river crossings.",
+  "fun": 5,
+  "fit": 4,
+  "do": 3,
+  "status": "template",
+  "needs": [
+   "Claude for fresh events (optional)"
+  ]
+ },
+ {
+  "name": "Bloom",
+  "src": [
+   "★ Terraform (the Nature app)",
+   "G Terraforming Biosphere Dome",
+   "G Space Garden Blooms",
+   "B Sun & Sprout",
+   "G Water Cycle Eco-Sim"
+  ],
+  "arch": "cozy-terraform",
+  "hook": "Place, turn and hold tool pieces (sun, cloud, seed pot, mountain) and watch a barren world bloom; time-lapse at the end.",
+  "fun": 4,
+  "fit": 5,
+  "do": 3,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Main Street Together",
+  "src": [
+   "★ Farm/mall/business/hotel/restaurant upgrading, co-op",
+   "G Architect's Blueprint: City Zoning",
+   "G Feudal City Guilds"
+  ],
+  "arch": "build-and-upgrade",
+  "hook": "Each kid runs a shop on a shared street; hold a piece on your shop to upgrade; shops supply each other.",
+  "fun": 4,
+  "fit": 4,
+  "do": 3,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Rummi Tiles",
+  "src": [
+   "★ Rummikub"
+  ],
+  "arch": "tiles-and-melds",
+  "hook": "The big shared table makes rearranging melds easy and rule-checked; racks stay private on phones.",
+  "fun": 4,
+  "fit": 4,
+  "do": 3,
+  "status": "template",
+  "needs": [
+   "Phones/iPads as racks"
+  ]
+ },
+ {
+  "name": "Mexican Train",
+  "src": [
+   "★ Mexican Train dominoes"
+  ],
+  "arch": "tiles-and-melds",
+  "hook": "Gorgeous trains snake out from the station; your train engine piece marks your line; hands on phones.",
+  "fun": 4,
+  "fit": 3,
+  "do": 3,
+  "status": "template",
+  "needs": [
+   "Phones/iPads as hands"
+  ]
+ },
+ {
+  "name": "Liar's Dice & Poker Night",
+  "src": [
+   "B Phones + Board idea",
+   "G King's Poison Taster"
+  ],
+  "arch": "secret-hands",
+  "hook": "Secrets on phones; slide your chip piece in to bet, turn it to set the bid; dramatic reveal on the table.",
+  "fun": 5,
+  "fit": 3,
+  "do": 3,
+  "status": "template",
+  "needs": [
+   "Phones",
+   "Room server"
+  ]
+ },
+ {
+  "name": "Bomb Squad",
+  "src": [
+   "G Bomb Squad Wire Cutters"
+  ],
+  "arch": "secret-hands",
+  "hook": "The bomb is on the table; only one phone has the manual — shout instructions across the table.",
+  "fun": 5,
+  "fit": 4,
+  "do": 3,
+  "status": "template",
+  "needs": [
+   "Phones"
+  ]
+ },
+ {
+  "name": "Island Builders (Catan-style)",
+  "src": [
+   "★ Catan-style"
+  ],
+  "arch": "hex-strategy",
+  "hook": "A new beautiful island every game; trading stays face-to-face; a printed raccoon robber.",
+  "fun": 5,
+  "fit": 4,
+  "do": 2,
+  "status": "template",
+  "needs": [
+   "Phones for hands"
+  ]
+ },
+ {
+  "name": "Dream Mahjong",
+  "src": [
+   "★ Mahjong with customizable tiles"
+  ],
+  "arch": "tiles-and-melds",
+  "hook": "Tile art the family designs (AI-generated suits: our pets, our town); the table checks hands.",
+  "fun": 4,
+  "fit": 3,
+  "do": 2,
+  "status": "template",
+  "needs": [
+   "Phones",
+   "Image generation for tile sets"
+  ],
+  "note": "Rules complexity makes this a parents-first game; a simplified kids' variant helps."
+ },
+ {
+  "name": "Pet Parade",
+  "src": [
+   "B Pet Parade",
+   "G Musical Melody Conductor"
+  ],
+  "arch": "music-toy",
+  "hook": "A physical step-sequencer: position is time, rotation is pitch; record your own voices as instruments.",
+  "fun": 4,
+  "fit": 5,
+  "do": 4,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Sleepy Farm Roundup",
+  "src": [
+   "G Sleepy Farm Roundup",
+   "G Penguin Ice Floe Wobble"
+  ],
+  "arch": "sneak-and-guard",
+  "hook": "Slide barn pieces over wandering sheep before the (silly) wolves arrive at sunset.",
+  "fun": 4,
+  "fit": 4,
+  "do": 4,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Chameleon Swat",
+  "src": [
+   "G Chameleon Swat",
+   "G Bubble Pop Bath Brigade",
+   "B Sumo Bots",
+   "G Micro-Curling"
+  ],
+  "arch": "reflex-party",
+  "hook": "60-second chaos rounds with pieces as swatters and bumpers; the littlest gets bigger targets.",
+  "fun": 4,
+  "fit": 3,
+  "do": 5,
+  "status": "template",
+  "needs": [],
+  "note": "Don't flick physical pieces across the glass (scratches, lost tracking) — pieces push virtual pucks."
+ },
+ {
+  "name": "Treasure Tides",
+  "src": [
+   "B Treasure Tides"
+  ],
+  "arch": "search-and-find",
+  "hook": "A spyglass piece shows clues only in the direction it faces; a shovel piece digs.",
+  "fun": 4,
+  "fit": 5,
+  "do": 4,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Gone Fishin'",
+  "src": [
+   "G Trophy Fish Strike"
+  ],
+  "arch": "reflex-party",
+  "hook": "Spin your reel piece round and round to reel in a fish (rotation as a crank).",
+  "fun": 4,
+  "fit": 4,
+  "do": 4,
+  "status": "template",
+  "needs": [],
+  "note": "A printed thumb-crank can't be sensed — spinning the whole piece can."
+ },
+ {
+  "name": "Slime Outbreak",
+  "src": [
+   "G Bioweapon Outbreak Quarantine (kid-friendly reskin)",
+   "G Volcano Escape"
+  ],
+  "arch": "aim-and-bounce",
+  "hook": "Green goo spreads across a town; place wall pieces to contain it together.",
+  "fun": 4,
+  "fit": 4,
+  "do": 3,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Castle Siege",
+  "src": [
+   "G Castle Siege: Trebuchet Arc",
+   "G Medieval Siege Engineer"
+  ],
+  "arch": "aim-and-bounce",
+  "hook": "Turn your trebuchet to aim; walls cast protective shadows.",
+  "fun": 4,
+  "fit": 4,
+  "do": 3,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Tadpole Crossing",
+  "src": [
+   "G Tadpole Pond Crossing"
+  ],
+  "arch": "cozy-terraform",
+  "hook": "Drop lily pads to calm the current so frogs can cross.",
+  "fun": 3,
+  "fit": 4,
+  "do": 4,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Constellation Maker",
+  "src": [
+   "G Constellation Mapmaker"
+  ],
+  "arch": "story-together",
+  "hook": "Connect stars with pieces to draw constellations and reveal their animated myths.",
+  "fun": 3,
+  "fit": 4,
+  "do": 4,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Wizard Duel",
+  "src": [
+   "G Rune-Forged Mage Duels"
+  ],
+  "arch": "combine-and-discover",
+  "hook": "Combine rune pieces into spells that collide mid-table (Fizz Lab's mix verb, versus).",
+  "fun": 4,
+  "fit": 4,
+  "do": 3,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Submarine Sonar",
+  "src": [
+   "G Submarine Sonar Ping"
+  ],
+  "arch": "secret-hands",
+  "hook": "Your sub's true position is secret on your phone; the table shows only sonar pings.",
+  "fun": 4,
+  "fit": 3,
+  "do": 3,
+  "status": "template",
+  "needs": [
+   "Phones"
+  ],
+  "note": "Hidden movement conflicts with physical pieces on the table, so positions live on phones."
+ },
+ {
+  "name": "Crypt Crawl",
+  "src": [
+   "G Necromancer Crypt Crawl",
+   "G Fog of War: Trench Line"
+  ],
+  "arch": "hex-strategy",
+  "hook": "Grid tactics with printed minis; the table tracks health, spells and line of sight.",
+  "fun": 4,
+  "fit": 3,
+  "do": 2,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Word Garden",
+  "src": [
+   "G Language Rune Scribe"
+  ],
+  "arch": "combine-and-discover",
+  "hook": "Put prefix and root pieces side by side to grow words (adjacency, not stacking).",
+  "fun": 3,
+  "fit": 3,
+  "do": 3,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Space Mining Co.",
+  "src": [
+   "G Asteroid Belt Mining Consortium",
+   "G Cyberpunk Netrunner",
+   "G Olympian Favor",
+   "G Plate Tectonics",
+   "G Ant Colony Tunnels",
+   "G Conspiracy Corkboard"
+  ],
+  "arch": "hex-strategy",
+  "hook": "Lower priority: heavier strategy or older-teen themes that fit the family less well.",
+  "fun": 3,
+  "fit": 3,
+  "do": 2,
+  "status": "template",
+  "needs": []
+ },
+ {
+  "name": "Gumdrop Works",
+  "src": [
+   "★ Magic candy factory (Willy Wonka spin-off)"
+  ],
+  "arch": "contraption",
+  "hook": "Place machine pieces (mixer, stretcher, flavour dial, wrapper) in a line; candy flows from machine to machine; turn a machine to change colour or flavour; fill wacky orders from candy-loving creatures.",
+  "fun": 5,
+  "fit": 5,
+  "do": 3,
+  "status": "template",
+  "needs": [],
+  "note": "Original characters and world — inspired by the feeling of Wonka's factory, not its IP. Doubles as a cozy toy: just build silly candy."
+ },
+ {
+  "name": "Twig & Leaf Inventors",
+  "src": [
+   "★ Ant inventor (A Bug's Life's leaf-and-twig machines)"
+  ],
+  "arch": "contraption",
+  "hook": "Pieces are found-object parts — twig lever, acorn wheel, leaf sail, dandelion spring. Place and turn them to build a Rube Goldberg machine that carries a berry home, then press go and watch it run.",
+  "fun": 5,
+  "fit": 5,
+  "do": 3,
+  "status": "template",
+  "needs": [],
+  "note": "Needs a small 2D physics engine (e.g. planck.js). Original ant hero, not Pixar's characters."
+ },
+ {
+  "name": "Fairy Garden",
+  "src": [
+   "★ Fairy garden (grow magical things, attract and collect fairies)"
+  ],
+  "arch": "cozy-terraform",
+  "hook": "Water, plant and brew potions (Fizz Lab's mix) to grow magical plants; each plant combo attracts a different fairy or creature species that visits and can be collected in a fairy book.",
+  "fun": 5,
+  "fit": 5,
+  "do": 4,
+  "status": "template",
+  "needs": [],
+  "note": "Neko Atsume–style collecting meets Fizz Lab; saved between sessions so the garden keeps growing."
+ },
+ {
+  "name": "Circuit Maker",
+  "src": [
+   "★ Circuit maker (solder, stamp capacitors/resistors/lights/fans)",
+   "G Circuit Weaver",
+   "G Clockwork Gears of Time",
+   "G Canal Lock Master"
+  ],
+  "arch": "contraption",
+  "hook": "Stamp component pieces (battery, LED, fan, buzzer, resistor, switch) onto a glowing circuit board; hold the soldering-iron piece and slide it to lay wires; close the loop and the fan spins and the lights blink.",
+  "fun": 4,
+  "fit": 5,
+  "do": 4,
+  "status": "template",
+  "needs": [],
+  "note": "Real but simplified electronics (current flows, too little power = dim light). Turning a switch or potentiometer piece is a natural dial."
+ }
 ]
