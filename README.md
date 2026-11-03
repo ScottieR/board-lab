@@ -49,14 +49,15 @@ src/board/sim.ts     desktop Piece Simulator
 src/board/input.ts   one input source (device or sim) + placed/lifted/grabbed/released/tap events
 src/engine/          the game engine: world, juice (fx), sound (sfx), seats, art kit + style cards
 src/engine/verbs/    the verb library (beam, find, loupe, hunt, mix, …) — 11 built, 25 designed
-src/engine/archetypes.ts   18 game archetypes: loop, Board hook, fun targets, littlest role, skeleton
+src/engine/archetypes.ts   19 game archetypes: loop, Board hook, fun targets, littlest role, skeleton
 src/recipes/         games built from verbs
 src/games/           hand-written games (sandbox)
 scripts/playtest.py  scripted headless playtest of every game (the start of the Studio check loop)
-docs/GAME_IDEAS.md   35 ideas ranked by fun × Board fit × doability (from docs/ideas.json)
+docs/GAME_IDEAS.md   38 ideas ranked by fun × Board fit × doability (from docs/ideas.json)
 docs/DESIGN_CODEX.md taste + fun rules every game is reviewed against
 docs/research/FUN_RESEARCH.md   what makes games fun — sources and findings
 docs/PIECES_AND_PRINTING.md     custom pieces & 3D-printed shells
+docs/research/PIECES_AND_CONTROLS.md   research: existing pieces, SDK limits, custom piece catalog, test plan
 ```
 
 Add a game: write a recipe in `src/recipes/` (or a hand-written `Game` in `src/games/`) and register it in `GAMES` in `src/main.ts`. Check it with `python3 scripts/playtest.py`.
